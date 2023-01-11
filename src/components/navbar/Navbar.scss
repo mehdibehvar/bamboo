@@ -1,0 +1,77 @@
+@mixin flex_position($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  };
+  $nav-text-primary-color:#FFFFFF;
+.navbar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include flex_position(column,center,center);
+ 
+    .navbar_Links_section{
+        width: 88%;
+        @include flex_position(row, space-between, center);
+        .logo_section{
+            @include flex_position(row, center, center);
+            .logo_wrapper{
+                margin-top: 33px;
+            }
+            .logo_name{
+                font-size: 36px;
+                color: $nav-text-primary-color;
+                margin-right: 12px;
+                margin-top: 17px;
+            }
+        }
+        .link_list{
+            margin-top: 23px;
+            @include flex_position(row, space-evenly, center); 
+            li{
+                margin-left: 64px;
+              a{
+                color: $nav-text-primary-color;
+                font-size: 30px;
+            }
+            }
+        }
+         .register_section{
+            @include flex_position(row, center, center);
+            :nth-child(1){
+               font-size: 30px;
+               color: $nav-text-primary-color;
+               margin-left: 25px;
+            }
+            :nth-child(2){
+                position: relative;
+                box-sizing: border-box;
+                @include flex_position(row, center, end);
+              .register_button{
+                background-color: #004458;
+                opacity: 50%;
+                width: 145px;
+                height: 98px;
+                border: 1px solid #707070;
+                margin: 0;
+              }
+              span{
+                position: absolute;
+                font-size: 30px;
+                color: $nav-text-primary-color;
+                top: 23px;
+                 right: 35px;
+                margin: 0;
+            }
+            }
+          
+         }
+    }
+    .navbar_bottom_border{
+        width: 88%;
+        height: 1px;
+        background-color: #D1D1D1;
+    }
+}
