@@ -1,0 +1,31 @@
+@font-face {
+  font-family:wyekan;
+  src:url("../fonts/Yekan.woff") format("woff"),;
+  src:url("../fonts/Yekan.woff2") format("woff2"),;
+  font-weight:100;
+  font-style: normal;
+}
+@font-face {
+  font-family:lalezar;
+  src:url("../fonts/Lalezar-Regular\ a4fran3.woff") format("woff"),
+  url("../fonts/Lalezar-Regular\ a4fran3.woff2") format("woff2"),;
+  font-weight: 100;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family:wyekan;
+  font-weight: 100;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
