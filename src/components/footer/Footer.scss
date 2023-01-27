@@ -1,5 +1,132 @@
+<<<<<<< HEAD
 .footer{
     width: 100%;
     height:300px;
     background-color: #004458;
+=======
+$text-primary-color: #ffffff;
+$text-secondary-color: #dbdbdb;
+@mixin flex_position($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  };
+.footer {
+  width: 100%;
+  background-color: #004458;
+  padding: 43px 109px 0 111px;
+  @include flex_position(column,center,start);
+  .top_section {
+   @include flex_position(row,center,center);
+   gap: 119px;
+    .aboutus_section {
+      width: 50%;
+      h3 {
+        font-size: 42px;
+        font-family: lalezar;
+        color: $text-primary-color;
+      }
+      p {
+        font-size: 28px;
+        color: $text-secondary-color;
+         width: 90%;
+      }
+    }
+    .newsletter_section{
+        width: 50%;
+        h3{
+            font-size: 42px;
+            font-family: lalezar;
+            color: $text-primary-color;
+            width: 800px;
+            margin-bottom: 48px;
+        }
+    }
+  };
+  @media screen and (max-width:900px) {
+    .top_section{
+        @include flex_position(column,center,center);
+        gap: 10px;
+        .aboutus_section{
+            width: 100%;
+        }
+        .newsletter_section{width: 100%;}
+    } 
+   
+};
+.seperator_border{
+    width: 90%;
+    height: 1px;
+    background-color: #D1D1D1;
+    margin-right: 0;
+    margin-top: 74px;
+};
+.middle_section{
+    margin-top: 31px;
+    width: 100%;
+    @include flex_position(row, flex-start, center);
+    h4{
+        font-size: 37px;
+        font-family: lalezar;
+        color: $text-primary-color;
+    }
+    .first_section{
+        width: 33%;
+        ul{
+            margin-top: 29px;
+            li{
+                color: $text-secondary-color;
+                font-size: 24px;
+                font-family:Century Gothic ;
+                margin-bottom: 20px;
+            }
+            li:last-child{
+                span{
+                    font-size: 40px;
+                    margin-left: 27px;
+                }
+            }
+        }
+    }
+    .second_section{
+        width: 33%;
+        ul{
+            margin-top: 21px;
+            li{
+                font-size: 25px;
+                color: $text-secondary-color;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .third_section{
+        width: 33%;
+        @include flex_position(row, flex-start, center);
+        .card{
+            width: 145px;
+            height: 144px;
+            background-color: $text-primary-color;
+            margin-left: 53px;
+        }
+    }
+}
+@media screen and (max-width:900px) {
+    padding: 20px 50px 0 50px;
+    .seperator_border{
+        margin-top: 20px;
+        width: 100%;
+    }
+};
+
+}
+.bottom_section{
+    background-color: #003544;
+    @include flex_position(row, center, center);
+    width: 100%;
+    p{
+        font-size: 28px;
+        font-family: wyekan;
+    }
+>>>>>>> development
 }

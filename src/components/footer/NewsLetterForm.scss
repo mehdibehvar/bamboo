@@ -1,0 +1,41 @@
+
+.newsletter_form{
+    position: relative;
+    width:79%;
+    .email_input{
+        height: 90px;
+        width: 100%;
+        background-color: #003544;
+        border: none;
+        color: #dbdbdb;
+        font-size: 34px;
+        padding-right:24px;
+        &::placeholder{
+            color: #415D65;
+            font-size: 34px;
+            font-family: wyekan;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+.newsletter_submit{
+    background-color: #002B37;
+    width: 195px;
+    height: 90px;
+    color:#09B28B ;
+    font-size: 40px;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.email_required_error{
+    color: yellow;
+    font-size: 20px;
+}
+.email_pattern_error{
+    color: red;
+    font-size: 20px;
+}
+}
