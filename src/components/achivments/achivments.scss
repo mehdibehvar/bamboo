@@ -1,0 +1,67 @@
+.achivments_section{
+    background-image: url("../../assets/images/achivments.png");
+    background-size: cover;
+    height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    .transparent_cover{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: #0000;
+        opacity: 20%;
+        z-index: -1;
+    };
+    .achivments_cards{
+        height: 488px;
+        display: flex;
+        justify-content: center;
+  .grid{
+    border-left: 2px solid #DBDBDB;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .achiv_card{
+        z-index: 2;
+        width: 100%;
+        color: white;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      
+       .card_title{
+           span{
+               font-size: 60px;
+               color: #FFFFFF;
+           }
+       }
+        p{
+           font-size: 22px;
+           color: #BFBFBF;
+           font-family: shabnam;
+           font-weight: normal;
+           max-width: 476px;
+        }
+        .icon_wrapper{
+           color:#FFFFFF;
+           font-size: 60px;
+        }
+       }
+  }
+    .achiv_trans_cards{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #000000;
+        opacity: 40%;
+       z-index: 1;
+    }
+    }
+}

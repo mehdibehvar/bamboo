@@ -8,12 +8,14 @@ import Courses from './pages/courses';
 import Course from './pages/course/[id]';
 import Login from './pages/login';
 import Register from './pages/register';
+import { CssBaseline } from '@mui/material';
 
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <CssBaseline/>
   <BrowserRouter>
    <Routes>
     <Route path="/" element={<App/>}/>
