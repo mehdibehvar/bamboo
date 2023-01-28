@@ -1,0 +1,11 @@
+.textfieldRtl{
+    text-align: right;
+    background-color: aliceblue;
+  
+    
+  }
+  .textfieldRtl label {
+    transform-origin: top right;
+    right: 26px;
+    
+  }
