@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Typography, Button,TextField, SvgIcon, Grid, Container, createTheme, styled} from '@material-ui/core'
 import useStyles from './style';
 import './textfield.css';
+import { flexbox } from '@mui/system';
 
 import bgImg from '../assets/bg.svg';
 import blueHomeIcon from '../assets/home.svg';
@@ -86,12 +87,8 @@ const Register = () => {
         >
 
 
-          <Grid item xs={12} md={6} lg={7} className={classes.posterContainer} order={{ xs: 2, sm: 2, lg: 2 }}
+          <Grid item xs={12} md={6} lg={7} className={classes.posterContainer}
             style={{backgroundImage : `url(${bgImg})`}}
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems='center'
             >
                 <Grid className={classes.poster}>
                     <Grid container justifyContent="space-between" alignItems='center' sx={{height:{xs: "100px", lg: "500px"}}} className={classes.titleAndLogo}>
@@ -107,7 +104,7 @@ const Register = () => {
                     </Grid>
                 </Grid>
                 
-                <Grid className={classes.icons}>
+                <Grid className={classes.icons} style={{position: 'absolute', bottom:'0'}}>
                     <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
                 </Grid>
             </Grid>
@@ -118,7 +115,7 @@ const Register = () => {
                 alignItems='center'
                 className={classes.formHeading}>
                     <Typography variant='h2' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
-                    <Button>
+                    <Button className={classes.homeIcon}>
                         <img style={{width: "30px"}} src={blueHomeIcon} alt="home-icon" />
                     </Button>
                 </Grid>

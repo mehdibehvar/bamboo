@@ -28,14 +28,24 @@ const useStyles = makeStyles((theme) => ({
         width: "100%"
     },
     btn:{
-        width: "20%"
+        height: "50px",
+        width: "20%",
+        boxShadow: "0",
+        border: 'none',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        }
     },
     registerBtn:{
         background: mainBlueColor,
         color: 'white',
         marginRight: "20px",
         whiteSpace: "nowrap",
-        minWidth: "max-content"
+        minWidth: "max-content",
+        [theme.breakpoints.down('sm')]: {
+            marginRight: '0',
+            marginBottom: '15px'
+        }
     },
     loginBtn: {
         color: mainBlueColor,
@@ -46,11 +56,23 @@ const useStyles = makeStyles((theme) => ({
     titleAndLogo: {
         color: "white",
         borderBottom: "2px solid #DBDBDB",
-        padding: "1.5em 0"
+        padding: "1.5em 0",
+        [theme.breakpoints.down('sm')]: {
+            display: 'flex',
+            flexDirection:'column-reverse',
+            justifyContent:'center',
+            alignItems:'center'
+        }
     },
     icons: {
         [theme.breakpoints.down('sm')]: {
             display: 'none'
+        }
+    },
+    homeIcon: {
+        display: 'none',
+        [theme.breakpoints.down('sm')]: {
+            display: 'block'
         }
     },
     poster: {
@@ -61,9 +83,13 @@ const useStyles = makeStyles((theme) => ({
         }*/
     },
     posterContainer: {
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
         height: '100vh',
         [theme.breakpoints.down('sm')]: {
-            height: '40vh'
+            height: '50vh'
         }
     }
 }))
