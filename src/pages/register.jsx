@@ -138,7 +138,7 @@ const Register = () => {
                     </Grid>
                 </Grid>
                 
-                <Grid className={classes.icons} style={{position: 'absolute', bottom:'0'}}>
+                <Grid className={classes.icons} style={{position: 'fixed', bottom:'0'}}>
                     <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
                 </Grid>
             </Grid>
@@ -284,7 +284,7 @@ const Register = () => {
                       //error={passwordError}
                     />
                     
-                    
+                    <div></div>
 
 
 

@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     register:{
         padding: "3em 6em",
         width: "30%",
-        height:'100vh'
+        
+        minHeight: "fit-content"
     },
     input: {
         padding: ".9em 1em",
@@ -93,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        height: 'auto',
+        
         [theme.breakpoints.down('sm')]: {
             height: '50vh'
         }
