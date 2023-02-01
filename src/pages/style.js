@@ -3,7 +3,11 @@ import { makeStyles } from  '@material-ui/core/styles';
 const mainBlueColor = "#004458";
 
 const useStyles = makeStyles((theme) => ({
-    
+    direction : 'rtl',
+    helperText:{
+        marginLeft: 'auto'
+    },
+
     form: {
         display: "flex",
         flexDirection: "column",
@@ -16,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
     },
     register:{
         padding: "3em 6em",
-        width: "30%"
+        width: "30%",
+        
+        minHeight: "fit-content"
     },
     input: {
         padding: ".9em 1em",
@@ -24,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "right",
         direction: "rtl"
     },
+    
     btnHolder: {
         width: "100%"
     },
@@ -87,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        height: '100vh',
+        
         [theme.breakpoints.down('sm')]: {
             height: '50vh'
         }
