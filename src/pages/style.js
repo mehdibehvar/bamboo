@@ -1,6 +1,6 @@
-import { colors } from '@material-ui/core';
 import { makeStyles } from  '@material-ui/core/styles';
 const mainBlueColor = "#004458";
+
 
 const useStyles = makeStyles((theme) => ({
     direction : 'rtl',
@@ -21,8 +21,10 @@ const useStyles = makeStyles((theme) => ({
     register:{
         padding: "3em 6em",
         width: "30%",
-        
-        minHeight: "fit-content"
+        minHeight: "fit-content",
+        [theme.breakpoints.down('sm')]: {
+            padding: "3em 5em"
+        }
     },
     input: {
         padding: ".9em 1em",
@@ -37,8 +39,9 @@ const useStyles = makeStyles((theme) => ({
     btn:{
         height: "50px",
         width: "20%",
-        boxShadow: "0",
+        boxShadow: "none",
         border: 'none',
+        borderRadius: '0',
         [theme.breakpoints.down('sm')]: {
             width: '100%'
         }
@@ -52,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             marginRight: '0',
             marginBottom: '15px'
+        },
+        '&:hover' : {
+            color: mainBlueColor
         }
     },
     loginBtn: {
@@ -83,11 +89,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     poster: {
-        /*marginBottom: '30%',
         [theme.breakpoints.down('sm')]: {
-            marginBottom: '15%'
+            marginTop: '-25px'
             
-        }*/
+        }
     },
     posterContainer: {
         display:'flex',
@@ -96,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems:'center',
         
         [theme.breakpoints.down('sm')]: {
-            height: '50vh'
+            height: '45vh'
         }
     }
 }))

@@ -80,7 +80,7 @@ const Login = () => {
         container
         className='container'
         //direction = {{xs: 'column-reverse', lg:'row'}}
-        direction='row-reverse'
+        direction='row'
         //sx={{ flexDirection: { xs: 'column-reverse', md: 'row'} }}
         justifyContent="space-between"
         alignItems="strech"
@@ -108,11 +108,12 @@ const Login = () => {
                     <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
                 </Grid>
             </Grid>
-            <Grid item xs={12} md={6} lg={5} className={classes.register} >
+            <Grid item xs={12} md={6} lg={5} className={classes.register} style={{height: '100vh'}}>
                 <Grid 
                 container
                 justifyContent="space-between"
                 alignItems='center'
+                style={{marginTop:'50px'}}
                 className={classes.formHeading}>
                     <Typography variant='h2' style={{fontSize: '2.5rem'}}>ورود</Typography>
                     <Button className={classes.homeIcon}>
@@ -120,7 +121,8 @@ const Login = () => {
                     </Button>
                 </Grid>
 
-                <form id='form' dir='rtl' className={classes.form} noValidate autoComplete='off' onSubmit={handleSubmit}>
+                <form id='form' dir='rtl' className={classes.form} noValidate autoComplete='off' onSubmit={handleSubmit}
+                style={{marginTop:'50px'}}>
                     <TextField
                       onChange={(e) => setName(e.target.value)}
                       variant="filled"
@@ -148,8 +150,8 @@ const Login = () => {
                     />
                     
                     <Grid container direction="row-reverse" justifyContent="flex-start" alignItems="center" className={classes.btnHolder}>
-                        <Button type='button' variant="contained" className={`${classes.btn} ${classes.registerBtn}`} size='large'>ثبت نام</Button>
-                        <Button type="submit" variant="contained" className={`${classes.btn} ${classes.loginBtn}`} size='large'>ورود</Button>
+                        <Button type='button' variant="contained" className={`${classes.btn} ${classes.registerBtn}`} size='large'>ورود</Button>
+                        <Button type="submit" variant="contained" className={`${classes.btn} ${classes.loginBtn}`} size='large'>ثبت نام</Button>
                     </Grid>
                 </form>
 
