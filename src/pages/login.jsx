@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Typography, Button,TextField, SvgIcon, Grid, Container, createTheme, styled} from '@material-ui/core'
+import { Typography, Button,TextField, SvgIcon, Grid, Container, createTheme, styled, Checkbox, FormGroup , FormControlLabel} from '@material-ui/core'
 import useStyles from './style';
 import './textfield.css';
 import { flexbox } from '@mui/system';
@@ -82,7 +82,7 @@ const Login = () => {
         //direction = {{xs: 'column-reverse', lg:'row'}}
         direction='row'
         //sx={{ flexDirection: { xs: 'column-reverse', md: 'row'} }}
-        justifyContent="space-between"
+        justifyContent="center"
         alignItems="strech"
         >
 
@@ -108,12 +108,12 @@ const Login = () => {
                     <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
                 </Grid>
             </Grid>
-            <Grid item xs={12} md={6} lg={5} className={classes.register} style={{height: '100vh'}}>
+            <Grid item xs={12} md={6} lg={5} className={classes.register} style={{height: '100vh', display: 'flex', flexDirection:'column', justifyContent:'center'}} >
                 <Grid 
                 container
                 justifyContent="space-between"
                 alignItems='center'
-                style={{marginTop:'50px'}}
+                
                 className={classes.formHeading}>
                     <Typography variant='h2' style={{fontSize: '2.5rem'}}>ورود</Typography>
                     <Button className={classes.homeIcon}>
@@ -122,7 +122,7 @@ const Login = () => {
                 </Grid>
 
                 <form id='form' dir='rtl' className={classes.form} noValidate autoComplete='off' onSubmit={handleSubmit}
-                style={{marginTop:'50px'}}>
+                >
                     <TextField
                       onChange={(e) => setName(e.target.value)}
                       variant="filled"
@@ -148,7 +148,12 @@ const Login = () => {
                       type="password"
                       error={passwordError}
                     />
-                    
+                    <Grid>
+                      <div style={{dislpay: 'flex'}}>
+                        <Typography>مرا به خاطر بسپار</Typography>
+                        <Checkbox />
+                      </div>
+                    </Grid>
                     <Grid container direction="row-reverse" justifyContent="flex-start" alignItems="center" className={classes.btnHolder}>
                         <Button type='button' variant="contained" className={`${classes.btn} ${classes.registerBtn}`} size='large'>ورود</Button>
                         <Button type="submit" variant="contained" className={`${classes.btn} ${classes.loginBtn}`} size='large'>ثبت نام</Button>
