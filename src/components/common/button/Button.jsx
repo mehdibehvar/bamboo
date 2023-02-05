@@ -2,9 +2,9 @@ const Button = ({className,children,onclick,type}) => {
   return (
     <button
     type={type}
-    onclick={onclick}
+    onClick={onclick}
      className={className}>{children}</button>
   )
 }
 
-export default Button
+export default Button;

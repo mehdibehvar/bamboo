@@ -5,37 +5,195 @@
     align-items: $align-items;
   };
 .courses_section{
-    @include flex_position(row, flex-start, center);
+    @include flex_position(row, flex-start, flex-start);
     .right{
+
         width: 100%;
+        @include flex_position(row,center, center);
+        padding: 156px 234px 300px 279px;
         .green_frame{
             width: 625px;
             height:625px;
             border: 3px solid #09B28B;
-        }
+            position: relative;
+            .js_frame{
+                position: absolute;
+                background-color: #F7DF1E;
+                width: 368px;
+                height: 456px;
+                top: -32px;
+                right: 441px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 62px;
+                .logo{
+                    background-image: url("../../assets/images/480px-Unofficial_JavaScript_logo_2.svg.png");
+                    background-size: cover;
+                    width: 250px;
+                    height: 250px
+                };
+                .title{
+                    width: 279px;
+                    height: 102px;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    justify-content: end;
+                    padding-top: 25px;
+                    span{
+                        font-size: 30px;
+                        color: #004458;
+                    }
+                }
+            };
+            .c_frame{
+                width: 450px;
+                height: 288px;
+                position: absolute;
+                background-color: #6A1577;
+                top: 43px;
+                right:-44px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                .logo{
+                    background-image: url("../../assets/images/c--4.png");
+                    background-size: cover;
+                    width: 93px;
+                    height: 81px
+                };
+                .title{
+                    width: 279px;
+                    height: 102px;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    justify-content: end;
+                    padding-top: 25px;
+                    padding-left: 33px;
+                    span{
+                        font-size: 30px;
+                        color: #004458;
+                    }
+                };
+            };
+            .java_frame{
+                width: 362px;
+                height: 368px;
+                background-color: #FFC7F8;
+                position: absolute;
+                bottom:-109px;
+                right: 44px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 77px;
+                .logo{
+                    background-image: url("../../assets/images/logo-java-text-color.png");
+                    background-size: cover;
+                    width: 174px;
+                    height:92px
+                };
+                .title{
+                    width: 279px;
+                    height: 102px;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    justify-content: end;
+                    padding-top: 25px;
+                    padding-left: 75px;
+                    span{
+                        font-size: 30px;
+                        color: #004458;
+                    }
+                };
+            };
+            .bootstrap_frame{
+                width: 312px;
+                height: 358px;
+                background-color: #CAB2EF;
+                position: absolute;
+                bottom: -192px;
+                right: 441px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 77px;
+                .logo{
+                    background-image: url("../../assets/images/bootstrap-logo-vector.png");
+                    background-size: cover;
+                    width: 208px;
+                    height:42px
+                };
+                .title{
+                    width: 279px;
+                    height: 102px;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    justify-content: end;
+                    padding-top: 25px;
+                    padding-left: 21px;
+                    span{
+                        font-size: 30px;
+                        color: #004458;
+                    }
+                };
+            }
+        };
+   
     }
     .left{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         justify-content: center;
         position: relative;
         overflow: hidden;
         width: 100%;
-        .see_courses{
-            position: absolute;
-            bottom: -30px;
+     padding-top: 247px;
+     padding-right: 62px;
+ 
+        .title{
+            color: #004458;
+            font-size: 60px;
+            font-family: lalezar;
+            margin: 0px!important;
+        }
+        .text{
+            font-size: 33px;
+            width: 673px;
+            color: #7E7E7E;
+            margin-top: 37px;
+            margin-bottom: 127px;
+        }
+        .button_wrapper{
+            @include flex_position(row, center, center);
+            width: 100%;
+            .see_courses{
             width: 279px;
             height: 102px;
             background-color: #004458;
+  
+            padding:25px 58px 37px 22px;
+     
+            span{
+                color: #FFFFFF;
+                font-size: 30px;
+            }
+        } 
         }
+       
         .frame{
-            border: 3px solid #e40b0b;
+            border: 3px solid #D1D1D1;
             width:100%;
             height: 743px;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: -2px;
+            right: 0px;
+            z-index: -1;
         }
     }
 }
