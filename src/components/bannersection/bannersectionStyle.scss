@@ -1,0 +1,115 @@
+@mixin flex_position($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  };
+.banner_section{
+    .top{
+        @include flex_position(row, space-between, center);
+        position: relative;
+        background-color: #004458;
+        .right{
+            @include flex_position(row,center,center);
+        width: 100%;
+          .content{
+            @include flex_position(column,center,center);
+
+              h4{
+                font-size: 56px;
+                color: #FFFFFF;
+                font-family: lalezar;
+  
+            };
+            p{
+                font-size: 35px;
+                color: #D1D1D1;
+                text-align: right;
+       
+            }
+          }
+          
+        };
+        .left{
+            background-image: url("../../assets/images/business-people-with-finance-chart.png");
+            background-size: cover;
+            height: 360px;
+            width: 100%;
+        };
+        button{
+            position: absolute;
+            width: 279px;
+            height: 102px;
+            background-color: #DBDBDB;
+            opacity: 80%;
+            top: 129px;
+            left: 190px;
+            font-size: 30px;
+            border: none;
+            color: #004458;
+        }
+    };
+    .middle{
+        @include flex_position(row, space-between, center);
+        background:linear-gradient(90deg, #004458, #09B28B);;
+        .left{
+            @include flex_position(row,center,center);
+        width: 100%;
+          .content{
+            @include flex_position(column,center,center);
+
+              h4{
+                font-size: 56px;
+                color: #FFFFFF;
+                font-family: lalezar;
+  
+            };
+            p{
+                font-size: 35px;
+                color: #D1D1D1;
+                text-align: right;
+       
+            }
+          }
+          
+        };
+        .right{
+            background-image: url("../../assets/images/young-handsome-curly-student-man-with-notebooks-isolated-white-wall.png");
+            background-size:cover;
+            height: 360px;
+            width: 100%;
+        };
+    }
+    .bottom{
+        @include flex_position(row, space-between, center);
+        position: relative;
+        background-color: #004458;
+        .right{
+            @include flex_position(row,center,center);
+        width: 100%;
+          .content{
+            @include flex_position(column,center,center);
+
+              h4{
+                font-size: 56px;
+                color: #FFFFFF;
+                font-family: lalezar;
+  
+            };
+            p{
+                font-size: 35px;
+                color: #D1D1D1;
+                text-align: right;
+       
+            }
+          }
+          
+        };
+        .left{
+            background-image: url("../../assets/images/cheerful-mood-group-people-business-conference-modern-classroom-daytime.png");
+            background-size: cover;
+            height: 360px;
+            width: 100%;
+        };
+    }
+}
