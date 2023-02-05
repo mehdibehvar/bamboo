@@ -1,0 +1,59 @@
+@mixin flex_position($direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+.suggestion_section {
+  @include flex_position(row, space-between, center);
+  position: relative;
+  background-color: #088568;
+  .right {
+    background-image: url("../../assets/images/thought-catalog-505eectW54k-unsplash.png");
+    background-size: cover;
+    height: 750px;
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+    padding-left: 188px;
+    padding-right: 169px;
+    padding-top: 61px;
+    h3 {
+      font-size: 60px;
+      color: #ffffff;
+      margin-bottom: 75px;
+    }
+    form {
+      @include flex_position(column, center, center);
+      gap: 70px;
+      input {
+        height: 90px;
+        background-color: #00775b;
+        width: 100%;
+        padding-top: 15px;
+        padding-right: 26px;
+        border: none;
+        &::placeholder {
+          font-size: 34px;
+          color: #0cdbab;
+        }
+      }
+      .email_input {
+border-bottom: 4px solid #0CDBAB;
+
+      };
+
+      div {
+        width: 100%;
+        @include flex_position(row, flex-end, center);
+        button {
+          background-color: #004458;
+          font-size: 40px;
+          color: #ffffff;
+          padding: 10px 55px 27px 46px;
+        }
+      }
+    }
+  }
+}
