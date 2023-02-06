@@ -1,8 +1,8 @@
 import React from 'react'
 import { Typography, Button, Grid, Container, ThemeProvider } from '@material-ui/core'
 import { createTheme } from '@mui/material/styles';
-import useStyles from './style';
-import './textfield.css';
+import useStyles from '../components/Form/style';
+import '../components/Form/textfield.css';
 
 import bgImg from '../assets/bg.svg';
 import blueHomeIcon from '../assets/home.svg';
@@ -12,7 +12,7 @@ import teleIcon from '../assets/tele.svg';
 import youtubeIcon from '../assets/yout.svg';
 import whatsAppIcon from '../assets/wha.svg';
 import whiteHomeIcon from '../assets/home12.svg';
-import Form from './Form';
+import Form from '../components/Form/Form';
 
 
 const Register = () => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { Typography, Button,TextField, SvgIcon, Grid, Container, createTheme, styled, Checkbox, FormGroup , FormControlLabel} from '@material-ui/core'
-import useStyles from './style';
-import './textfield.css';
+import useStyles from '../components/Form/style';
+import '../components/Form/textfield.css';
 import { flexbox } from '@mui/system';
 
 import bgImg from '../assets/bg.svg';
