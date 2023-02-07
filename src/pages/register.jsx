@@ -36,7 +36,7 @@ const Register = () => {
         className='container'
         direction='row-reverse'
         justifyContent="space-between"
-        alignItems="strech"
+        
         >
 
 
@@ -58,7 +58,9 @@ const Register = () => {
                 </Grid>
                 
                 <Grid className={classes.icons} style={{position: 'fixed', bottom:'0'}}>
+                    <a href="/">
                     <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
+                    </a>
                 </Grid>
             </Grid>
             <Grid item xs={12} md={6} lg={5} className={classes.register} >
@@ -68,9 +70,11 @@ const Register = () => {
                 alignItems='center'
                 className={classes.formHeading}>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
+                    <a href="/">
                     <Button className={classes.homeIcon}>
                         <img style={{width: "30px"}} src={blueHomeIcon} alt="home-icon" />
                     </Button>
+                    </a>
                 </Grid>
                 
                   <Form />
