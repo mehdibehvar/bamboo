@@ -4,7 +4,6 @@ const CoursesSection = () => {
   return (
     <section className='courses_section'>
         <div className="right">
- 
           <div className="green_frame"> 
           <div className="js_frame">
             <div className="logo"></div>

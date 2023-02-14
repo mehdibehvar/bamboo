@@ -69,7 +69,7 @@
         background-color: #004458;
         opacity: 85%;
         width: 100%;
-        @include flex_position(row, flex-end, center);
+        @include flex_position(row, center, center);
         span {
           font-size: 32px;
           color: #ffffff;
@@ -92,5 +92,8 @@
         }
       }
     }
+  }
+  @media  screen and (max-width:1280px) {
+    @include flex_position(column, flex-start, flex-start);
   }
 }
