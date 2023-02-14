@@ -1,4 +1,4 @@
-import { Container } from "@mui/system"
+import Container from '@mui/material/Container';
 import Footer from "../footer/Footer"
 import HeroHeader from "../heroheader/HeroHeader"
 

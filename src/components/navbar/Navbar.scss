@@ -48,7 +48,7 @@
             :nth-child(2){
                 position: relative;
                 box-sizing: border-box;
-                @include flex_position(row, center, end);
+                @include flex_position(row, center, flex-end);
               .register_button{
                 background-color: #004458;
                 opacity: 50%;
