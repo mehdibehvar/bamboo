@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
     @include flex_position(column,center,center);
  
     .navbar_Links_section{
