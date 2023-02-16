@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
     @include flex_position(column,center,center);
  
     .navbar_Links_section{
@@ -48,7 +49,7 @@
             :nth-child(2){
                 position: relative;
                 box-sizing: border-box;
-                @include flex_position(row, center, end);
+                @include flex_position(row, center, flex-end);
               .register_button{
                 background-color: #004458;
                 opacity: 50%;
