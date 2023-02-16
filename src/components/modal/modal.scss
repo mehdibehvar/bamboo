@@ -1,0 +1,121 @@
+    .course_modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FFFFFF;
+        padding: 50px;
+        width: 800px;
+        .course_info{
+            .top_section{
+                display: flex;
+                .details{
+                    font-size: 28px;
+                    color:#004458;
+                    padding-left: 28px;
+                    padding-right: 28px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 21px;
+                    h6{
+                        color:#004458;
+                        font-size: 35px;
+                    }
+                    .teacher{
+                       span{
+                        margin-left: 16px
+                       }
+                    };
+                    .capacity{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        div{
+                            span{
+                                margin-left: 16px;
+                            }
+                        }
+                        button{
+                            width: 96px;
+                            height: 44px;
+                            background-color: #004458;
+                            border: none;
+                            color: #FFFFFF;
+                            font-size: 26px;
+                        }
+                    }
+                    .border_bottom{
+                        height: 2px;
+                        background-color: #004458;
+                        opacity: 40px;
+                        width: 100%;
+                    }
+                    .price{
+                        span{
+                            color: #09B28B;
+                            font-size: 30px;
+                        }
+                    };
+                    .date{
+                        font-size: 32px;
+                        color: #004458;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 21px;
+                        span{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+             
+            };
+            .course_status{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 16px;
+                margin-top: 21px;
+               span{
+            
+                font-size: 32px;
+                color: #004458;
+            }
+                .capacity_bar{
+                    width:300px;
+                    height:40px;
+                    background-color: #D4E0E3;
+                    direction: ltr;
+                    position: relative;
+                    span{
+                      color:#FFFFFF;
+                      font-size:26px;
+                      position:absolute;
+                      top:5px;
+                      left:25px;
+                      z-index: 2;
+                   }
+                  }
+            }
+            .border_bottom{
+                height: 2px;
+                background-color: #004458;
+                opacity: 40px;
+                width: 100%;
+                margin-top: 33px
+            }
+        };
+        .see_course{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+           button{
+            background-color: #DBDBDB;
+            padding: 20px;
+            font-size: 30px;
+            color: #004458;
+            border: none;
+           }
+        }
+    }

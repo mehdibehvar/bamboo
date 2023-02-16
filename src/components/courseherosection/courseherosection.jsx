@@ -32,7 +32,7 @@ const BorderBottom=styled(Box)(({theme})=>(props)=>(
 ));
 const CourseHeroSection = ({course}) => {
 const barPercent=(course?.students?.length/course.capacity)*100
-     console.log(course);
+   
   return (
     <section className='course_hero_section'>
     <Navbar/>
