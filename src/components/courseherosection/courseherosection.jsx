@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar'
 import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import { CalenderIcon, GoldStarIcon, GraduateIcon, LikeIcon, TeacherIcon, TeamWorkIcon } from "../common/button/icons";
+import Loading from "../loading/Loading";
 const LogoWrapper=styled(Box)(({theme})=>(props)=>(
   { 
       width:"223px",
@@ -35,7 +36,8 @@ const barPercent=(course?.students?.length/course.capacity)*100
   return (
     <section className='course_hero_section'>
     <Navbar/>
-{course?<><section className="summary">
+{course?<>
+<section className="summary">
     <LogoWrapper url={"http://res.cloudinary.com/df9w7u89a/image/upload/v1676457191/nrhzpnnosuyxssjkcjsb.png"}/>
     <div className="title">{course.title} </div>
     <BorderBottom/>
@@ -78,7 +80,7 @@ const barPercent=(course?.students?.length/course.capacity)*100
         </div>
      </div>
      <div className="blur_cover"></div>
-    </section></>:<div>loading</div>}
+    </section></>:<Loading/>}
    <div className="blur_rectangle"></div>
    </section>
   )

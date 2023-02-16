@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { axiosGet, getAllCourses } from './utils/httpclient';
+import {  getAllCourses } from './utils/httpclient';
 import './assets/css/App.scss';
 import Achivments from './components/achivments/Achivments';
 import BannerSection from './components/bannersection/BannerSection';
@@ -8,7 +8,7 @@ import CoursesSection from './components/CoursesSection/CoursesSection';
 import Layout from './components/layouts/Layout';
 import NewsSection from './components/newssection/NewsSection';
 import SuggestionSection from './components/suggestionSection/SuggestionSection';
-import axios from 'axios';
+
 
 function App() {
   const [courses, setCourses] = useState([]);

@@ -1,0 +1,60 @@
+.course_card{
+    width:100%;
+    background-color: #FFFFFF;
+    .details{
+        font-size: 28px;
+        color:#004458;
+        padding-left: 28px;
+        padding-right: 28px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 21px;
+        h6{
+            color:#004458;
+            font-size: 35px;
+        }
+        .teacher{
+           span{
+            margin-left: 16px
+           }
+        };
+        .capacity{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            div{
+                span{
+                    margin-left: 16px;
+                }
+            }
+            button{
+                width: 96px;
+                height: 44px;
+                background-color: #004458;
+                border: none;
+                color: #FFFFFF;
+                font-size: 26px;
+            }
+        }
+        .border_bottom{
+            height: 2px;
+            background-color: #004458;
+            opacity: 40px;
+            width: 100%;
+        }
+    }
+    .price{
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 28px;
+        padding-right: 28px;
+        margin-bottom: 17px;
+        margin-top: 17px;
+        span{
+            color: #09B28B;
+            font-size: 30px;
+        }
+    }
+}
