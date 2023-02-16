@@ -1,0 +1,47 @@
+$nav-text-primary-color:#FFFFFF;
+@mixin absolute_position($top,$right,$bottom) {
+    position: absolute;
+   top: $top;
+   right: $right;
+   bottom: $bottom
+  };
+.search_box{
+    height: 98px;
+width: 100%;
+z-index: 1;
+@include absolute_position(auto,0,0 );
+    .search_bg_transparent{
+        width: 100%;
+        background-color:#004458;
+        opacity: 50%;
+        height: 98px;
+    };
+    .search_submit{
+        background: transparent;
+        color: $nav-text-primary-color;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        @include absolute_position(29px,113px,29px );
+        svg{
+            font-size: 40px
+        }
+    };
+    .search_input{
+         border: none;
+         background: transparent;
+         margin: 0;
+         color: $nav-text-primary-color;
+         font-size: 30px;
+       @include absolute_position(23px,189px,29px );
+       &::placeholder{
+        color: #DBDBDB;
+        font-size: 30px;
+        font-family: wyekan;
+       }
+       &:focus{
+       outline: none;
+       }
+    }
+  }

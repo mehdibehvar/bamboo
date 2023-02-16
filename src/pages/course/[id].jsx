@@ -5,6 +5,7 @@ import BenefitsSection from '../../components/benefitsSection/BenefitsSection'
 import CourseHeroSection from '../../components/courseherosection/courseherosection'
 import DescriptionSection from '../../components/descriptionsection/DescriptionSection'
 import Footer from '../../components/footer/Footer'
+import Loading from '../../components/loading/Loading'
 import { getCourse } from '../../utils/httpclient'
 
 
@@ -27,7 +28,7 @@ useEffect(() => {
   <DescriptionSection course={course}/>
   <BenefitsSection/>
      <Footer/>  
-   </div>:<div>loading</div>}
+   </div>:<Loading/>}
 </Container>
   )
 }

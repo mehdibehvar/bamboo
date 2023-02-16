@@ -1,16 +1,15 @@
 import axios from "axios";
 import http from "./interceptor/http.interceptor";
-axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
-
+// axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.defaults.headers.common["Authorization"] = "AUTH_TOKEN";
-
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
-export async function axiosGet(url) {
-    return  axios.get(url)
-    .then(response=>response.data)
-    .catch(error=>console.log(error))
+
+// export async function axiosGet(url) {
+//     return  axios.get(url)
+//     .then(response=>response.data)
+//     .catch(error=>console.log(error))
    
-}
+// }
 
 
 export const getAllCourses = async () => {
@@ -28,6 +27,18 @@ export const getCourse = async (id) => {
     const result = await http.get(`api/course/${id}`);
     
     return result.data
+  } catch (error) {
+    console.log(error);
+  }
+  return {};
+};
+export const getPagination = async (pagenumber,pagesize) => {
+  try {
+    const result = await http.get(`/api/course/list?`,{params:{
+      pagenumber,
+      pagesize
+    }}); 
+    return result.data;
   } catch (error) {
     console.log(error);
   }
