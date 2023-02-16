@@ -1,6 +1,6 @@
 import axios from "axios";
 import http from "./interceptor/http.interceptor";
-// axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.defaults.headers.common["Authorization"] = "AUTH_TOKEN";
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
 

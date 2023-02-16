@@ -1,6 +1,9 @@
 import styled from '@emotion/styled'
 import { Box } from '@mui/material'
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import CourseModal from '../modal/Modal';
+
+
 import './coursecard.scss'
 const CardLogo=styled(Box)(({theme})=>(props)=>(
     { 
@@ -14,6 +17,9 @@ const CardLogo=styled(Box)(({theme})=>(props)=>(
   ));
 
 const CourseCard = ({course}) => {
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
   return (
     <div className='course_card'>
         <CardLogo url="http://res.cloudinary.com/df9w7u89a/image/upload/v1676538533/lquvwb83skt98w1fdshl.png"/>
@@ -28,9 +34,9 @@ const CourseCard = ({course}) => {
                     <span>ظرفیت:</span>
                     <span>{course.capacity} نفر</span>
                 </div>
-                <NavLink to={`/course/${course?._id}`}>
-                <button>جزییات</button>
-                </NavLink>
+              
+                <button onClick={handleOpen}>جزییات</button>
+              <CourseModal course={course} open={open} handleClose={handleClose}/>
             </div>
             <div className='border_bottom'></div>
         </div>
@@ -41,4 +47,4 @@ const CourseCard = ({course}) => {
   )
 }
 
-export default CourseCard
+export default CourseCard;
