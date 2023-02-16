@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 import "./descriptionsection.scss"
-const LogoWrapper=styled("span")(({theme})=>(props)=>(
-    { 
+
+const LogoWrapper=styled("span")(({theme})=>(props)=>({ 
         width:55,
         height:55,
         backgroundSize:"cover",
-     backgroundImage:`url(${props.url})`,
+        backgroundImage:`url(${props.url})`,
       }
  ));
-const DescriptionSection = () => {
+const DescriptionSection = ({course}) => {
   return (
   <section className="description_section">
     <div className="right">
@@ -28,12 +28,12 @@ const DescriptionSection = () => {
             <div className="header">
               <LogoWrapper url="../../src/assets/images/480px-Unofficial_JavaScript_logo_2.svg.png"/>
        
-               <span>دوره جاوا اسکریپت</span>
+               <span>{course.title}</span>
             </div>
             <div className="price_section">
                   <div className="price">
                     <span>قیمت دوره : </span>
-                    <span>20000 <span>تومان</span></span>
+                    <span>{course.cost} <span>تومان</span></span>
                   </div>
                   <div className="discount">
                   <span>تخفیف : </span>
@@ -41,7 +41,7 @@ const DescriptionSection = () => {
                   </div>
                   <div className="pay_price">
                     <span>مبلغ قابل پرداخت :</span>
-                    <span>20000 <span>تومان</span></span>
+                    <span>{course.cost-(course.cost*10/100)} <span>تومان</span></span>
                   </div>
             </div>
             <div className="timing">
@@ -60,7 +60,7 @@ const DescriptionSection = () => {
                    <span className="time"></span>
                     </div> 
 
-
+          
             </div>
             <div className="register">
                 <button className="register_button">ثبت نام در دوره</button>
