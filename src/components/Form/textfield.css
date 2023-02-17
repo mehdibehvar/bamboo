@@ -6,7 +6,59 @@
   font-family: 'Shabnam';
   src: url(../../assets/fonts/Shabnam-Bold.woff2) format("truetype")
 }
+:root{
+  --mainBlueColor: #004458
+}
 
+.posterContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titleAndLogo{
+  color: white;
+  border-bottom: 2px solid #DBDBDB;
+  padding: 1.5em 0;
+}
+
+.register{
+  padding: 3em 6em;
+  width: 30%;
+  min-height: fit-content;
+}
+.formHeading{
+  padding-bottom: 1em;
+  color: var(--mainBlueColor);
+}
+.homeIcon{
+  display: 'none';
+}
+.helperText{
+  margin-left: 'auto';
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: var(--mainBlueColor);
+}
+.btnHolder{
+  width: "100%"
+}
+
+.btn{
+  height: 50px;
+  width: 20%;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+.loginBtn{
+  color: var(--mainBlueColor);
+  background: transparent;
+  border: none;
+}
 .textfieldRtl{
     text-align: right;
     background-color: aliceblue;

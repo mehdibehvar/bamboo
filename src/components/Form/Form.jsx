@@ -1,14 +1,13 @@
 import React from 'react'
-import { Button,TextField, Grid } from '@material-ui/core'
-import useStyles from './style';
+import { Button,TextField, Grid } from '@mui/material'
+
 import './textfield.css';
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-
+import { styled } from '@mui/system';
 
 
 const Form = () => {
-    const classes = useStyles();
 
     const validationSchema = yup.object({
         userName: yup.string().required("نام کاربری الزامیست"),
@@ -36,9 +35,45 @@ const Form = () => {
         },
         validationSchema: validationSchema
       })
-  
+      
+
+
+    const RegisterBtn = styled(Button)(({theme}) => ({
+        height: "50px",
+        width: "20%",
+        boxShadow: "none",
+        border: 'none',
+        borderRadius: '0',
+        background: "#004458",
+        color: 'white',
+        marginRight: "20px",
+        whiteSpace: "nowrap",
+        minWidth: "max-content",
+        [theme.breakpoints.down('sm')]: {
+          width: '100%',
+          marginRight: '0',
+          marginBottom: '15px'
+      },
+      '&:hover' : {
+        color: '#004458'
+    }
+    }))
+    const LoginBtn = styled(Button)(({theme}) => ({
+        height: "50px",
+        width: "20%",
+        boxShadow: "none",
+        border: 'none',
+        color: '#004458',
+        background: "transparent",
+        borderRadius: '0',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        }
+  }))
+
   return (
-    <form id='form' dir='rtl' className={classes.form} noValidate onSubmit={formik.handleSubmit}>
+    <form id='form' dir='rtl' className='form' noValidate onSubmit={formik.handleSubmit}>
+                    
                     <TextField
                       variant="filled"
                       fullWidth
@@ -53,11 +88,11 @@ const Form = () => {
                       error={formik.touched.userName && Boolean(formik.errors.userName)}
                       helperText={formik.touched.userName && formik.errors.userName}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
                     />
-                    
-                    <TextField
+
+                     <TextField
                       variant="filled"
                       fullWidth
                       autoFocus
@@ -71,7 +106,7 @@ const Form = () => {
                       error={formik.touched.email && Boolean(formik.errors.email)}
                       helperText={formik.touched.email && formik.errors.email}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
                     />
                     
@@ -90,7 +125,7 @@ const Form = () => {
                       error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
                       helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
                     />
                     
@@ -111,7 +146,7 @@ const Form = () => {
                       error={formik.touched.idNumber && Boolean(formik.errors.idNumber)}
                       helperText={formik.touched.idNumber && formik.errors.idNumber}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
                     />
                     
@@ -131,7 +166,7 @@ const Form = () => {
                       error={formik.touched.birthDate && Boolean(formik.errors.birthDate)}
                       helperText={formik.touched.birthDate && formik.errors.birthDate}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
                     />
                     
@@ -150,17 +185,17 @@ const Form = () => {
                       error={formik.touched.password && Boolean(formik.errors.password)}
                       helperText={formik.touched.password && formik.errors.password}
                       FormHelperTextProps={{
-                        className: classes.helperText
+                        className: 'helperText'
                       }}
-                    />
+                    /> 
                     
                     <div></div>
 
 
 
-                    <Grid container direction="row-reverse" justifyContent="flex-start" alignItems="center" className={classes.btnHolder}>
-                        <Button type='submit' variant="contained" className={`${classes.btn} ${classes.registerBtn}`} size='large'>ثبت نام</Button>
-                        <Button variant="contained" className={`${classes.btn} ${classes.loginBtn}`} size='large'>ورود</Button>
+                    <Grid container direction="row-reverse" justifyContent="flex-start" alignItems="center" className="btnHolder">
+                        <RegisterBtn type='submit' variant="contained" size='large'>ثبت نام</RegisterBtn>
+                        <LoginBtn variant="contained" size='large'>ورود</LoginBtn>
                     </Grid>
                 </form>
   )

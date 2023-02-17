@@ -1,8 +1,10 @@
 import React from 'react'
 import { Typography, Button, Grid, Container, ThemeProvider } from '@material-ui/core'
 import { createTheme } from '@mui/material/styles';
-import useStyles from '../components/Form/style';
+
 import '../components/Form/textfield.css';
+import Poster from '../components/poster/Poster'
+import { styled } from '@mui/system';
 
 import bgImg from '../assets/bg.svg';
 import blueHomeIcon from '../assets/home.svg';
@@ -25,64 +27,37 @@ const Register = () => {
 });
    
   
-  const classes = useStyles();
+  
+  const Register = styled(Grid)(({theme}) => ({
+    [theme.breakpoints.down('sm')]: {
+        padding: "3em 5em"
+    }
+  }))
+  const HomeIcon = styled(Button)(({theme}) => ({
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block'
+    }
+  }))
 
 
   return (
     <ThemeProvider theme={theme}>
     <Container maxWidth="xl" style={{ height: '100vh', margin:'0', padding: '0' }}>
-        <Grid 
-        container
-        className='container'
-        direction='row-reverse'
-        justifyContent="space-between"
-        
-        >
-
-
-          <Grid item xs={12} md={6} lg={7} className={classes.posterContainer}
-            style={{backgroundImage : `url(${bgImg})`}}
-            >
-                <Grid className={classes.poster}>
-                    <Grid container justifyContent="space-between" alignItems='center' sx={{height:{xs: "100px", lg: "500px"}}} className={classes.titleAndLogo}>
-                        <Typography variant='h4' className='boldFont'>آکادمی آموزشی بامبو</Typography>
-                        <img src={bambooLogo} alt="bamboo-logo" />
-                    </Grid>
-                    
-                    <Grid container direction='row' justifyContent="space-between" alignItems='center' style={{marginTop: "30px"}} className={classes.icons}>
-                        <Button><img src={whatsAppIcon} alt="whatsapp-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={teleIcon} alt="telegram-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={instaIcon} alt="insta-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={youtubeIcon} alt="youtube-logo" style={{width: "25px"}}/></Button>
-                    </Grid>
-                </Grid>
-                
-                <Grid className={classes.icons} style={{position: 'fixed', bottom:'0'}}>
-                    <a href="/">
-                    <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
-                    </a>
-                </Grid>
-            </Grid>
-            <Grid item xs={12} md={6} lg={5} className={classes.register} >
-                <Grid 
-                container
-                justifyContent="space-between"
-                alignItems='center'
-                className={classes.formHeading}>
+        <Grid container direction='row-reverse' justifyContent="space-between">
+          <Poster />
+          <Register item xs={12} md={6} lg={5} className='register' >
+                <Grid container justifyContent="space-between" alignItems='center'className='formHeading'>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
                     <a href="/">
-                    <Button className={classes.homeIcon}>
+                    <HomeIcon className='homeIcon'>
                         <img style={{width: "30px"}} src={blueHomeIcon} alt="home-icon" />
-                    </Button>
+                    </HomeIcon>
                     </a>
                 </Grid>
-                
-                  <Form />
-
-            </Grid>
-            
+                <Form />
+          </Register>
         </Grid>
-
     </Container>
     </ThemeProvider>
   )
