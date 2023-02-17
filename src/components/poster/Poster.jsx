@@ -1,19 +1,19 @@
 
-import { Typography, Button, Grid, Container, ThemeProvider } from '@mui/material'
-import { createTheme } from '@mui/material/styles';
+import { Typography, Button, Grid } from '@mui/material'
+
 
 import '../Form/textfield.css';
 import { styled } from '@mui/system';
 
 import bgImg from '../../assets/bg.svg';
-import blueHomeIcon from '../../assets/home.svg';
+
 import bambooLogo from '../../assets/bamboo.svg';
 import instaIcon from '../../assets/insta.svg';
 import teleIcon from '../../assets/tele.svg';
 import youtubeIcon from '../../assets/yout.svg';
 import whatsAppIcon from '../../assets/wha.svg';
 import whiteHomeIcon from '../../assets/home12.svg';
-import Form from '../Form/Form';
+
 
 function Poster() {
     
