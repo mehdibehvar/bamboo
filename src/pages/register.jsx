@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Button, Grid, Container, ThemeProvider } from '@material-ui/core'
+
 import { createTheme } from '@mui/material/styles';
 
 import '../components/Form/textfield.css';
@@ -15,6 +15,7 @@ import youtubeIcon from '../assets/yout.svg';
 import whatsAppIcon from '../assets/wha.svg';
 import whiteHomeIcon from '../assets/home12.svg';
 import Form from '../components/Form/Form';
+import { Typography, Button, Grid, Container, ThemeProvider } from '@mui/material';
 
 
 const Register = () => {
