@@ -54,7 +54,7 @@ const PaginationSection = () => {
               </button>
          <div className="numbers_wrapper">
          {[...Array(pagesValue).keys()].map((item) => (
-                <button className={pagenumber===item+1?"active":''} key={item}>{item + 1}</button>
+                <button onClick={()=>setPagenumber(item+1)} className={pagenumber===item+1?"active":''} key={item}>{item + 1}</button>
               ))}
          </div>
               <button

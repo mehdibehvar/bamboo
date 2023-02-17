@@ -16,9 +16,12 @@ const SliderBar=styled(Box)(({theme})=>(props)=>(
   { 
       width:props.percent,
       height:"100%",
-   backgroundColor:"red",
+   backgroundColor:"#DBDBDB",
    opacity:"75%",
-
+   position:"absolute",
+   zIndex:6,
+   top:0
+   
     }
 ));
 const BorderBottom=styled(Box)(({theme})=>(props)=>(
@@ -52,9 +55,13 @@ const barPercent=(course?.students?.length/course.capacity)*100
         </div>
     </div>
     <div className="capacity_bar">
-            <span>{barPercent}%</span>
-        <SliderBar percent={`${barPercent}%`}/>
      
+     <div className="slot">
+     </div>
+        <SliderBar percent={`${barPercent}%`}>
+     <span>{barPercent}%</span>
+
+        </SliderBar>
     </div>
     </section>
     <section className="details">
