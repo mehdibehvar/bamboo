@@ -19,7 +19,7 @@ const Course = () => {
   }
 useEffect(() => {
   getCourseById(id);
-}, []);
+}, [id]);
 
   return (
     <Container  maxWidth="xxl">

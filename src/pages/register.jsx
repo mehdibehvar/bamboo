@@ -35,7 +35,7 @@ const Register = () => {
         <Grid container direction='row-reverse' justifyContent="space-between">
           <Poster/>
           <Register item xs={12} md={6} lg={5} className='register' >
-                <Grid container justifyContent="space-between" alignItems='center'className='formHeading'>
+                <Grid container justifyContent="space-between" alignItems='center' className='formHeading'>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
                     <a href="/">
                     <HomeIcon className='homeIcon'>
