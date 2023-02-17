@@ -1,17 +1,8 @@
 import axios from "axios";
 import http from "./interceptor/http.interceptor";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
-axios.defaults.headers.common["Authorization"] = "AUTH_TOKEN";
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
-
-// export async function axiosGet(url) {
-//     return  axios.get(url)
-//     .then(response=>response.data)
-//     .catch(error=>console.log(error))
-   
-// }
-
-
+axios.defaults.headers.common["Authorization"] = "AUTH_TOKEN";
 export const getAllCourses = async () => {
   try {
     const result = await http.get('api/course/getall');
@@ -45,3 +36,22 @@ export const getPagination = async (pagenumber,pagesize) => {
   return {};
 };
 
+export const loginUser=async (data)=>{
+  try {
+    const result=await http.post("/api/auth/login",{email:data.email,password:data.password});
+    return result.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+export const getStudentById = async (id) => {
+  try {
+    const result = await http.get(`/api/student/${id}`);
+    
+    return result.data
+  } catch (error) {
+    console.log(error);
+  }
+  return {};
+};

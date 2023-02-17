@@ -1,30 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './assets/css/index.scss';
-import App from './App';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Routes } from 'react-router';
-import Courses from './pages/courses';
-import Course from './pages/course/[id]';
-import Login from './pages/login';
-import Register from './pages/register';
-import { CssBaseline } from '@mui/material';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/css/index.scss";
+import App from "./App";
+import { BrowserRouter, Route } from "react-router-dom";
+import { Routes } from "react-router";
+import Courses from "./pages/courses";
+import Course from "./pages/course/[id]";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import { CssBaseline } from "@mui/material";
+import StoreProvider from "./contexts/store";
 
 // import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CssBaseline/>
-  <BrowserRouter>
-   <Routes>
-    <Route path="/" element={<App/>}/>
-    <Route path="courses" element={<Courses/>}/>
-    <Route path="course/:id" element={<Course/>}/>
-    <Route path="login" element={<Login/>}/>
-    <Route path="register" element={<Register/>}/>
-   </Routes>
-  </BrowserRouter>
+    <StoreProvider>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="course/:id" element={<Course />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </StoreProvider>
   </React.StrictMode>
 );
 

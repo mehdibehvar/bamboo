@@ -16,7 +16,7 @@ const SliderBar=styled(Box)(({theme})=>(props)=>(
   { 
       width:props.percent,
       height:"100%",
-   backgroundColor:"#DBDBDB",
+   backgroundColor:"red",
    opacity:"75%",
 
     }

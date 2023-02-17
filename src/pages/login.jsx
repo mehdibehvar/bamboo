@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <Container maxWidth="xxl">
       <Grid container>
-        <Grid item sm="6">
+        <Grid item md={7}>
           <Box sx={style}>
             <BlurDiv />
        <LoginCenter>
@@ -95,7 +95,7 @@ const Login = () => {
            
           </Box>
         </Grid>
-        <Grid item sm="6">
+        <Grid item md={5}>
           <LoginForm/>
         </Grid>
       </Grid>
