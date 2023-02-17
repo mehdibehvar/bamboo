@@ -10,7 +10,7 @@ $text-secondary-color: #dbdbdb;
   width: 100%;
   background-color: #004458;
   padding: 43px 109px 0 111px;
-  @include flex_position(column,center,start);
+  @include flex_position(column,center,flex-start);
   .top_section {
    @include flex_position(row,center,center);
    gap: 119px;

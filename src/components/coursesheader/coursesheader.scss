@@ -1,0 +1,14 @@
+.courses_header{
+    background-image: url("../../assets/images/courseheaader.png");
+    background-size:cover;
+    height: 197px;
+    position: relative;
+    .blur_rectangle {
+        background-color: #004458;
+        opacity: 80%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+      }
+}

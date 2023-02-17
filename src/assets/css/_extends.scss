@@ -1,0 +1,43 @@
+@mixin flex_position($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
+  .flex-column-center{
+    @include flex_position(column, center, center)
+  };
+  .flex-column{
+    @include flex_position(column, center, flex-start)
+  };
+  .flex-column-start{
+    @include flex_position(column, center, flex-start)
+  };
+  .flex-row-center{
+    @include flex_position(row, center, center)
+  };
+  .flex-between{
+    @include flex_position(row, space-between, center);
+  }
+  .gap-8{
+    gap:8px
+  }
+  /////color///
+  .brand-color{
+    color: #004458;
+  }
+  .danger-color{
+    color: red;
+  }
+  ////fontsize///
+  .fs-60{
+    font-size: 60px;
+    font-family: lalezar;
+  }
+  .fs-24{
+    font-size: 24px;
+  }
+  //////size/////
+.w-100{
+    width: 100%;
+}

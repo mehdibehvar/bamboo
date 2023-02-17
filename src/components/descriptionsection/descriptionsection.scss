@@ -1,0 +1,106 @@
+@mixin flex_position($direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+.description_section {
+  @include flex_position(row, flex-start, center);
+  .right {
+    flex-basis: 70%;
+    padding-left: 110px;
+    padding-right: 105px;
+    h3 {
+      font-size: 60px;
+      color: #004458;
+      font-family: lalezar;
+    }
+    p {
+      font-size: 28px;
+      color: #004458;
+    }
+  }
+  .left {
+    @include flex_position(row, flex-start, center);
+    flex-basis: 30%;
+    position: relative;
+    padding-left: 110px;
+    padding-top: 122px;
+    padding-bottom: 122px;
+    overflow: hidden;
+    .card {
+      background-color: #f9f9f9;
+      padding: 29px;
+      width: 100%;
+      z-index: 1;
+      .header {
+        @include flex_position(row, flex-start, center);
+        gap: 20px;
+        border-bottom: 2px solid #004458;
+        span {
+          font-size: 40px;
+          color: #004458;
+        }
+      }
+      .price_section {
+        color: #004458;
+        font-size: 30px;
+        width: 100%;
+        margin-top: 22px;
+        div {
+          @include flex_position(row, space-between, center);
+          width: 100%;
+          margin-bottom: 34px;
+        }
+        .discount {
+          :last-child {
+            color: #f20000;
+          }
+        }
+        .pay_price {
+          :last-child {
+            color: #09b28b;
+          }
+        }
+      }
+      .timing {
+        @include flex_position(row, center, center);
+        gap: 13px;
+        div {
+          @include flex_position(row, center, center);
+          gap: 5px;
+        }
+        span.time {
+          background-color: #dbdbdb;
+          width: 45px;
+          height: 61px;
+        }
+        .seperator{
+            font-size: 35px;
+        }
+      };
+      .register{
+        width: 100%;
+        margin-top: 46px;
+        @include flex_position(row, center, center);
+        .register_button{
+            font-size: 35px;
+            color: #FFFFFF;
+            background-color: #09B28B;
+            height: 72px;
+            border: none;
+            width: 80%;
+        }
+      }
+    };
+    .frame{
+        width: 490px;
+        height: 652px;
+        border: 4px solid #DBDBDB;
+        position: absolute;
+        top: -40px;
+        left: -60px;
+        z-index: 0;
+    }
+  }
+}

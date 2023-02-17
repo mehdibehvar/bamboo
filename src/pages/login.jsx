@@ -1,171 +1,106 @@
-import React from 'react'
-import { useState } from 'react';
-import { Typography, Button,TextField, SvgIcon, Grid, Container, createTheme, styled, Checkbox, FormGroup , FormControlLabel} from '@material-ui/core'
-import useStyles from '../components/Form/style';
-import '../components/Form/textfield.css';
-import { flexbox } from '@mui/system';
+import styled from "@emotion/styled";
+import { Box, Container, Grid } from "@mui/material";
+import {BsWhatsapp} from "react-icons/bs";
+import {TbBrandTelegram} from "react-icons/tb";
+import {AiOutlineYoutube} from "react-icons/ai";
+import {AiOutlineInstagram} from "react-icons/ai";
+import { NavLink } from "react-router-dom";
+import backImage from "../assets/images/pexels-picjumbocom-461077.png";
+import { HomeIcon } from "../components/common/button/icons";
+import bambooIcon from "../assets/images/bamboo.png"
+import LoginForm from "../components/loginform/LoginForm";
+const style = {
+  backgroundImage: `url(${backImage})`,
+  width: "100%",
+  height: "100vh",
+  backgroundSize: "cover",
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "flex-end",
+  flexDirection:"column"
+};
+const BlurDiv = styled(Box)(({ theme }) => (props) => ({
+  width: "100%",
+  height: "100%",
+  backgroundColor: "#004458",
+  position: "absolute",
+  opacity: "80%",
+}));
+const LoginCenter = styled(Box)(({ theme }) => (props) => ({
+  width: "100%",
+  height: "100%",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+zIndex:1,
+color:"#FFFFFF",
+fontFamily:"lalezar",
+fontSize:'40px',
+"div.title":{
+display:"flex",
+alignItems:"center",
+gap:10
+},
+"span.bamboo":{
+  backgroundImage:`url(${bambooIcon})`,
+  width:50,
+  height:50,
+  backgroundSize:'cover'
+},
 
-import bgImg from '../assets/bg.svg';
-import blueHomeIcon from '../assets/home.svg';
-import bambooLogo from '../assets/bamboo.svg';
-import instaIcon from '../assets/insta.svg';
-import teleIcon from '../assets/tele.svg';
-import youtubeIcon from '../assets/yout.svg';
-import whatsAppIcon from '../assets/wha.svg';
-import whiteHomeIcon from '../assets/home12.svg';
-
-const Login = () => {
-  const classes = useStyles();
-
-
-  const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [idNumber, setIdNumber] = useState('');
-    const [birthDate, setBirthDate] = useState('');
-    const [password, setPassword] = useState('');
-
-
-    const [nameError, setNameError] = useState(false);
-    const [emailError, setEmailError] = useState(false);
-    const [phoneError, setPhoneError] = useState(false);
-    const [idNumberError, setIdNumberError] = useState(false);
-    const [birthDateError, setBirthDateError] = useState(false);
-    const [passwordError, setPasswordError] = useState(false);
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-
-      setNameError(false)
-      setEmailError(false)
-      setPhoneError(false)
-      setIdNumberError(false)
-      setBirthDateError(false)
-      setPasswordError(false)
-
-      //const phonePattern = /^((|0|98|098|0098|\\+98)[1-8][1-9][2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])/$
-
-      let valid = true;
-      if(name == '') {
-        setNameError(true)
-      }
-      if(email == '') {
-        setEmailError(true)
-      }
-      console.log('1');
-      //console.log(phonePattern.test("09111755639"));
-      if(phone == '' ) {
-        setPhoneError(true)
-        valid = false
-      }
-      if(idNumber == '') {
-        setIdNumberError(true)
-      }
-      if(birthDate == '') {
-        setBirthDateError(true)
-      }
-      if(password == '') {
-        setPasswordError(true)
-      }
-      
-
-      if(valid){
-        console.log('yes');
-      }
-    }
-
-  return (
-    <Container maxWidth="xl" style={{ height: '100vh', margin:'0', padding: '0' }}>
-        <Grid 
-        container
-        className='container'
-        //direction = {{xs: 'column-reverse', lg:'row'}}
-        direction='row'
-        //sx={{ flexDirection: { xs: 'column-reverse', md: 'row'} }}
-        justifyContent="center"
-        alignItems="strech"
-        >
-
-
-          <Grid item xs={12} md={6} lg={7} className={classes.posterContainer}
-            style={{backgroundImage : `url(${bgImg})`}}
-            >
-                <Grid className={classes.poster}>
-                    <Grid container justifyContent="space-between" alignItems='center' sx={{height:{xs: "100px", lg: "500px"}}} className={classes.titleAndLogo}>
-                        <Typography variant='h4'>آکادمی آموزشی بامبو</Typography>
-                        <img src={bambooLogo} alt="bamboo-logo" />
-                    </Grid>
-                    
-                    <Grid container direction='row' justifyContent="space-between" alignItems='center' style={{marginTop: "30px"}} className={classes.icons}>
-                        <Button><img src={whatsAppIcon} alt="whatsapp-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={teleIcon} alt="telegram-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={instaIcon} alt="insta-logo" style={{width: "25px"}}/></Button>
-                        <Button><img src={youtubeIcon} alt="youtube-logo" style={{width: "25px"}}/></Button>
-                    </Grid>
-                </Grid>
-                
-                <Grid className={classes.icons} style={{position: 'absolute', bottom:'0'}}>
-                    <Button><img src={whiteHomeIcon} alt="home-logo" style={{width: "25px", marginBottom: '10px'}}/></Button>
-                </Grid>
-            </Grid>
-            <Grid item xs={12} md={6} lg={5} className={classes.register} style={{height: '100vh', display: 'flex', flexDirection:'column', justifyContent:'center'}} >
-                <Grid 
-                container
-                justifyContent="space-between"
-                alignItems='center'
-                
-                className={classes.formHeading}>
-                    <Typography variant='h2' style={{fontSize: '2.5rem'}}>ورود</Typography>
-                    <Button className={classes.homeIcon}>
-                        <img style={{width: "30px"}} src={blueHomeIcon} alt="home-icon" />
-                    </Button>
-                </Grid>
-
-                <form id='form' dir='rtl' className={classes.form} noValidate autoComplete='off' onSubmit={handleSubmit}
-                >
-                    <TextField
-                      onChange={(e) => setName(e.target.value)}
-                      variant="filled"
-                      fullWidth
-                      autoFocus
-                      label="نام کاربری"
-                      className="textfieldRtl"
-                      dir="rtl"
-                      required
-                      type="text"
-                      error={nameError}
-                    />
-                    
-                    <TextField
-                      onChange={(e) => setPassword(e.target.value)}
-                      variant="filled"
-                      fullWidth
-                      autoFocus
-                      label="رمز عبور"
-                      className="textfieldRtl"
-                      dir="rtl"
-                      required
-                      type="password"
-                      error={passwordError}
-                    />
-                    <Grid>
-                      <div style={{dislpay: 'flex'}}>
-                        <Typography>مرا به خاطر بسپار</Typography>
-                        <Checkbox />
-                      </div>
-                    </Grid>
-                    <Grid container direction="row-reverse" justifyContent="flex-start" alignItems="center" className={classes.btnHolder}>
-                        <Button type='button' variant="contained" className={`${classes.btn} ${classes.registerBtn}`} size='large'>ورود</Button>
-                        <Button type="submit" variant="contained" className={`${classes.btn} ${classes.loginBtn}`} size='large'>ثبت نام</Button>
-                    </Grid>
-                </form>
-
-            </Grid>
-            
-        </Grid>
-
-    </Container>
-  )
+"div.icons":{
+  borderTop:"5px solid #DBDBDB",
+  display:"flex",
+  gap:"100px",
+  paddingTop:35,
+  marginTop:46
 }
 
-export default Login
+}));
+const HomeIconWrapper = styled(Box)(({ theme }) => (props) => ({
+  width: "100%",
+display:"flex",
+alignItems:"center",
+justifyContent:"center",zIndex:1
+
+}));
+const Login = () => {
+  return (
+    <Container maxWidth="xxl">
+      <Grid container>
+        <Grid item md={7}>
+          <Box sx={style}>
+            <BlurDiv />
+       <LoginCenter>
+
+              <div className="title">
+            <h2>آکادمی آموزشی بامبو</h2>   <span className="bamboo"></span>
+              </div>
+              <div className="icons">
+              <span><BsWhatsapp/></span>
+            <span><TbBrandTelegram/></span>
+            <span><AiOutlineYoutube/></span>
+            <span><AiOutlineInstagram/></span>
+              </div>
+       
+       </LoginCenter>
+          <HomeIconWrapper>
+<NavLink to="/">
+
+              <HomeIcon />
+</NavLink>
+          </HomeIconWrapper>
+           
+          </Box>
+        </Grid>
+        <Grid item md={5}>
+          <LoginForm/>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+
+export default Login;
