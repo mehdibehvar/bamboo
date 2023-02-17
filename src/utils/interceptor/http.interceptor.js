@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios , {AxiosResponse }from "axios";
+import { getItem } from "../storage.service";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.interceptors.response.use(
   (response) => {
@@ -17,12 +18,12 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-// axios.interceptors.request.use((config) => {
-//   const token = getItem('token')
-//   config.headers = config.headers || {}
-//   config.headers['x-auth-token'] = JSON.parse(token)
-//   return config
-// })
+axios.interceptors.request.use((config) => {
+  const token = getItem('token')
+  config.headers = config.headers || {}
+  config.headers['x-auth-token'] = JSON.parse(token)
+  return config
+})
 
 
 const methods = {
