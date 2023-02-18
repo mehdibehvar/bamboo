@@ -12,7 +12,7 @@ const NewsLetterForm = () => {
     <form className='newsletter_form' onSubmit={handleSubmit(onRegister)}>
         <input className='email_input'
         placeholder='ایمیل خود را وارد کنید...'
-         {...register("email",{required:true,pattern:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/})} />
+         {...register("email",{required:true,pattern:/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/})} />
          <FormErrors errors={errors}/>
          <Button  type='submit' className='newsletter_submit'>عضویت</Button>
     </form>

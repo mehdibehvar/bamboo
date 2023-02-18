@@ -51,9 +51,9 @@ const LoginForm = () => {
           })}
           className="email_input"
         />
-         {errors.email?<FormErrors errors={errors}/>:null}
+         {errors.email?<div className="flex-row-center gap-8"><FormErrors errors={errors}/></div>:null}
         <input placeholder="رمز عبور:" {...register("password",{required:true,minLength:4,maxLength:22})} className="pass_input" />
-        {errors.password?<FormErrors errors={errors}/>:null}
+        {errors.password?<div className="flex-row-center"><FormErrors errors={errors}/></div>:null}
         <div className="remember_section flex-between w-100">
           <div className="brand-color flex-row-center">
             <input type="checkbox" id="rememberme"  {...register("remember")}/>
@@ -63,10 +63,13 @@ const LoginForm = () => {
             <span className="brand-color">فراموشی رمز</span>
           </NavLink>
         </div>
-        <div className="buttons_wrapper w-100">
-          <NavLink to="/register" className="register brand-color">
+        <div className="buttons_wrapper w-100 ">
+            <span className="regis_link">
+          <NavLink to="/register" className="brand-color">
+
             ثبت نام
           </NavLink>
+            </span>
           <button  className="submit_button">ورود</button>
         </div>
       </form>

@@ -1,24 +1,13 @@
 import React from 'react'
 import { Typography, Button, Grid, Container, ThemeProvider } from '@mui/material'
 import { createTheme } from '@mui/material/styles';
-
 import '../components/Form/textfield.css';
 import Poster from '../components/poster/Poster'
 import { styled } from '@mui/system';
-
-import bgImg from '../assets/bg.svg';
 import blueHomeIcon from '../assets/home.svg';
-import bambooLogo from '../assets/bamboo.svg';
-import instaIcon from '../assets/insta.svg';
-import teleIcon from '../assets/tele.svg';
-import youtubeIcon from '../assets/yout.svg';
-import whatsAppIcon from '../assets/wha.svg';
-import whiteHomeIcon from '../assets/home12.svg';
 import Form from '../components/Form/Form';
 
-
 const Register = () => {
-
   const theme = createTheme({
     typography: {
         fontFamily: 'Yekan'
@@ -45,9 +34,9 @@ const Register = () => {
     <ThemeProvider theme={theme}>
     <Container maxWidth="xl" style={{ height: '100vh', margin:'0', padding: '0' }}>
         <Grid container direction='row-reverse' justifyContent="space-between">
-          <Poster />
+          <Poster/>
           <Register item xs={12} md={6} lg={5} className='register' >
-                <Grid container justifyContent="space-between" alignItems='center'className='formHeading'>
+                <Grid container justifyContent="space-between" alignItems='center' className='formHeading'>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
                     <a href="/">
                     <HomeIcon className='homeIcon'>

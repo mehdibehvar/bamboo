@@ -46,11 +46,17 @@
     .capacity_bar{
       width: 100%;
       height: 52px;
-      background-color: #DBDBDB;
-      opacity: 34%;
+     
       margin-top: 46px;
       direction: ltr;
       position: relative;
+      z-index: 1;
+      .slot{
+        background-color: #DBDBDB;
+        opacity: 34%;
+        width: 100%;
+        height: 52px;
+      }
       span{
         color:"#242424";
         font-size:26px;
