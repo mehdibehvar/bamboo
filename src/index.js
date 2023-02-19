@@ -10,13 +10,15 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import { CssBaseline } from "@mui/material";
 import StoreProvider from "./contexts/store";
+import { SnackbarProvider } from "notistack";
 
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <StoreProvider>
+      <SnackbarProvider anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+           <StoreProvider>
       <CssBaseline />
       <BrowserRouter>
         <Routes>
@@ -28,6 +30,8 @@ root.render(
         </Routes>
       </BrowserRouter>
     </StoreProvider>
+      </SnackbarProvider>
+ 
   </React.StrictMode>
 );
 

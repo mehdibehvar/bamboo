@@ -59,7 +59,7 @@ const barPercent=(course?.students?.length/course.capacity)*100
      <div className="slot">
      </div>
         <SliderBar percent={`${barPercent}%`}>
-     <span>{barPercent}%</span>
+     <span>{Math.ceil(barPercent)}%</span>
 
         </SliderBar>
     </div>

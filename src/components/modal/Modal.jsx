@@ -68,7 +68,7 @@ export default function CourseModal({ course, open, handleClose }) {
             <div className="course_status">
              <span> وضعیت دوره:</span>
               <div className="capacity_bar">
-                <span>{barPercent}%</span>
+                <span>{Math.ceil(barPercent)}%</span>
                 <SliderBar percent={`${barPercent}%`} />
               </div>
             </div>

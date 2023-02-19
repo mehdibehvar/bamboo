@@ -90,6 +90,12 @@
             height: 72px;
             border: none;
             width: 80%;
+            cursor: pointer;
+        };
+        .deactive_button{
+          background-color: gray;
+          color: rgb(128, 0, 0);
+          font-size: 24px
         }
       }
     };

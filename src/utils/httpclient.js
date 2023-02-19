@@ -44,7 +44,16 @@ export const loginUser=async (data)=>{
     console.log(error);
     return error;
   }
-}
+};
+export const CourseRegister=async (userId,courseId)=>{
+  try {
+    const result=await http.post(`/api/course/addStudentToCourse/${userId}`,{courseId});
+    return result.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
 export const getStudentById = async (id) => {
   try {
     const result = await http.get(`/api/student/${id}`);
