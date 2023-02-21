@@ -47,7 +47,7 @@ const LoginForm = () => {
           placeholder="ایمیل:"
           {...register("email", {
             required: true,
-            pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
           })}
           className="email_input"
         />

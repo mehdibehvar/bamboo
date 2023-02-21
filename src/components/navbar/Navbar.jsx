@@ -7,9 +7,11 @@ import { FaUserAlt } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import jwt_decode from "jwt-decode";
 import { getStudentById } from "../../utils/httpclient";
+import { getItem, removeItem } from "../../utils/storage.service";
 const Navbar = () => {
   const { state, dispatch } = useContext(store);
-  const { token, studentModel } = state.userInfo;
+  const { studentModel } = state.userInfo;
+  const token=getItem("token");
   const [showTooltip, setShowTooltip] = useState(false);
   const [role, setRole] = useState("");
   useEffect(() => {
@@ -29,12 +31,14 @@ const Navbar = () => {
         console.log("error", error);
       }
     }
-  }, []);
+  }, [token,dispatch]);
 
   const handleLogout = () => {
     dispatch({
       type: actionType.logout_user,
     });
+removeItem("token");
+
   };
   return (
     <nav className="navbar">
