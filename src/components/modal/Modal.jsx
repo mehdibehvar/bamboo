@@ -48,13 +48,13 @@ export default function CourseModal({ course, open, handleClose }) {
                   <div>
                     <span>تاریخ شروع : </span>
                     <span>
-                      {new Date(course.startDate).toLocaleDateString("fa-en")}
+                      {new Date(course.startDate).toLocaleDateString()}
                     </span>
                   </div>
                   <div>
                     <span>تاریخ پایان : </span>
                     <span>
-                      {new Date(course.endDate).toLocaleDateString("fa-en")}
+                      {new Date(course.endDate).toLocaleDateString()}
                     </span>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function CourseModal({ course, open, handleClose }) {
                   <span>{course.cost} تومان</span>
                 </div>
               </div>
-              <CardLogo url="http://res.cloudinary.com/df9w7u89a/image/upload/v1676538533/lquvwb83skt98w1fdshl.png" />
+              <CardLogo url={`${course.lesson.image}`} />
             </div>
             <div className="course_status">
              <span> وضعیت دوره:</span>
