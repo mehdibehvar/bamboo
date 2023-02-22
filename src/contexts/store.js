@@ -79,7 +79,6 @@ case actionType.login_error:
 }
 };
 
-
 const StoreProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const value={state,dispatch}
@@ -88,6 +87,6 @@ const StoreProvider = ({children}) => {
           {children}
     </store.Provider>
   )
-}
+};
 
 export default StoreProvider;

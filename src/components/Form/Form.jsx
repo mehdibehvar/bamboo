@@ -13,7 +13,6 @@ import * as yup from "yup";
 import { styled } from "@mui/system";
 import { actionType, store } from "../../contexts/store";
 import { registerUser, uploadImage } from "../../utils/httpclient";
-import { setItem } from "../../utils/storage.service";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -163,8 +162,7 @@ const Form = () => {
                 {errors.password.message}
               </FormHelperText>
             )}
-          </FormControl>
-        
+          </FormControl>        
           <FormControl fullWidth sx={{ mb: 1 }}>
             <InputLabel
               htmlFor="phoneNumber"

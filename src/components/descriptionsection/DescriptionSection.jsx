@@ -18,7 +18,7 @@ const DescriptionSection = ({ course }) => {
   const [aciveRegister, setAciveRegister] = useState(true);
   const {state}=useContext(store);
   const {studentModel}=state.userInfo;
-  const {_id}=studentModel;
+ 
   const courseStudents=course.students;
   const navigate = useNavigate();
   const token = getItem("token");
@@ -39,11 +39,11 @@ const DescriptionSection = ({ course }) => {
     }
   };
 useEffect(() => {
- const isuserRegistered=courseStudents.some((item)=>item._id===_id);
+ const isuserRegistered=courseStudents.some((item)=>item._id===studentModel?._id);
 if(isuserRegistered){
   setAciveRegister(false);
 }
-}, [aciveRegister,_id,courseStudents])
+}, [aciveRegister,studentModel?._id,courseStudents])
 
   return (
     <section className="description_section">
