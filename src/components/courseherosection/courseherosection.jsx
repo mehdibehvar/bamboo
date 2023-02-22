@@ -35,13 +35,13 @@ const BorderBottom=styled(Box)(({theme})=>(props)=>(
 ));
 const CourseHeroSection = ({course}) => {
 const barPercent=(course?.students?.length/course.capacity)*100
-   
+   console.log(course.lesson.image);
   return (
     <section className='course_hero_section'>
     <Navbar/>
 {course?<>
 <section className="summary">
-    <LogoWrapper url={"http://res.cloudinary.com/df9w7u89a/image/upload/v1676457191/nrhzpnnosuyxssjkcjsb.png"}/>
+    <LogoWrapper url={`${course.lesson.image}`}/>
     <div className="title">{course.title} </div>
     <BorderBottom/>
     <div className="capacity_wrapper">
@@ -74,8 +74,8 @@ const barPercent=(course?.students?.length/course.capacity)*100
         <div className="border border_right"></div>
       <div className="date_wrapper">
       <CalenderIcon/>
-        <span> تاریخ شروع : {new Date(course.startDate).toLocaleDateString("fa-en")}</span>
-        <span> تاریخ پایان  : {new Date(course.endDate).toLocaleDateString("fa-en")}</span>
+        <span> تاریخ شروع : {new Date(course.startDate).toLocaleDateString()}</span>
+        <span> تاریخ پایان  : {new Date(course.endDate).toLocaleDateString()}</span>
       </div>
         <div className="border border_left"></div>
      </div>

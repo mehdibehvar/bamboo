@@ -20,9 +20,10 @@ const CourseCard = ({course}) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    console.log();
   return (
     <div className='course_card'>
-        <CardLogo url="http://res.cloudinary.com/df9w7u89a/image/upload/v1676538533/lquvwb83skt98w1fdshl.png"/>
+        <CardLogo url={`${course.lesson.image}`}/>
         <div className='details'>
             <h6>{course.title} </h6>
             <div className='teacher'>
