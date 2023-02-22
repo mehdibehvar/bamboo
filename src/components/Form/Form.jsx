@@ -89,7 +89,7 @@ const Form = () => {
     resolver: yupResolver(schema),
   });
   const onSubmit = async (data) => {
-    console.log(data);
+
     dispatch({
       type: actionType.login_request,
     });
@@ -102,13 +102,12 @@ const Form = () => {
         payload: response.result,
       });
       if(response.success){
-        enqueueSnackbar(response.message, {
+        enqueueSnackbar(response.message[0].message, {
           variant: "success",
           autoHideDuration: 2000,
         });
       }
-      setItem("token", JSON.stringify(response.result.jwtToken));
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       dispatch({
         type: actionType.login_error,

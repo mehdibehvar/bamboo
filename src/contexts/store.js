@@ -71,9 +71,7 @@ case actionType.login_error:
             ...state,
                userInfo:{
                 ...state.userInfo,
-                ...state.userInfo,
                 loading:false,
-                token:action.payload.jwtToken
                }
         }
     default:

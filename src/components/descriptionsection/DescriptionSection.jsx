@@ -14,10 +14,11 @@ const LogoWrapper = styled("span")(({ theme }) => (props) => ({
   backgroundImage: `url(${props.url})`,
 }));
 const DescriptionSection = ({ course }) => {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const [aciveRegister, setAciveRegister] = useState(true);
-  const {state,dispatch}=useContext(store);
+  const {state}=useContext(store);
   const {studentModel}=state.userInfo;
+  const {_id}=studentModel;
   const courseStudents=course.students;
   const navigate = useNavigate();
   const token = getItem("token");
@@ -38,11 +39,11 @@ const DescriptionSection = ({ course }) => {
     }
   };
 useEffect(() => {
- const isuserRegistered=courseStudents.some((item)=>item._id===studentModel?._id);
+ const isuserRegistered=courseStudents.some((item)=>item._id===_id);
 if(isuserRegistered){
   setAciveRegister(false);
 }
-}, [aciveRegister])
+}, [aciveRegister,_id,courseStudents])
 
   return (
     <section className="description_section">

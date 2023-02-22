@@ -27,7 +27,10 @@ const LoginForm = () => {
         type:actionType.login_success,
         payload:response.result
       });
-      setItem("token",JSON.stringify(response.result.jwtToken));
+      if(data.remember){
+        setItem("token",JSON.stringify(response.result.jwtToken));
+      }
+    
       navigate("/");
     } catch (error) {
      
@@ -56,7 +59,7 @@ const LoginForm = () => {
         {errors.password?<div className="flex-row-center"><FormErrors errors={errors}/></div>:null}
         <div className="remember_section flex-between w-100">
           <div className="brand-color flex-row-center">
-            <input type="checkbox" id="rememberme"  {...register("remember")}/>
+            <input type="checkbox" checked id="rememberme"  {...register("remember")}/>
             <label htmlFor="rememberme">مرا به خاطر بسپار</label>
           </div>
           <NavLink to="/">
