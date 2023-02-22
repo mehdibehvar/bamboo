@@ -15,7 +15,7 @@ import whatsAppIcon from '../../assets/wha.svg';
 import whiteHomeIcon from '../../assets/home12.svg';
 
 
-function Poster() {
+const PosterSection=()=> {
     
     const PosterConainer = styled(Grid)(({theme}) => ({
         [theme.breakpoints.down('sm')]: {
@@ -72,4 +72,4 @@ function Poster() {
   )
 }
 
-export default Poster
+export default PosterSection

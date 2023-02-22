@@ -45,6 +45,17 @@ export const loginUser=async (data)=>{
     return error;
   }
 };
+export const registerUser=async (data)=>{
+  try {
+    const result=await http.post("/api/auth/register",data,{headers:{
+
+    }});
+    return result.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
 export const CourseRegister=async (userId,courseId)=>{
   try {
     const result=await http.post(`/api/course/addStudentToCourse/${userId}`,{courseId});
@@ -64,3 +75,22 @@ export const getStudentById = async (id) => {
   }
   return {};
 };
+export const uploadImage=async(file)=>{
+  const data = new FormData();
+data.append('image', file[0]);
+try {
+const response=await http.post("/api/upload/image",data,{
+  headers:{
+    'Content-Type': 'multipart/form-data',
+    'Accept': 'application/json', 
+  }
+
+});
+
+return response.data.result;
+} catch (error) {
+console.log(error);
+
+}
+
+ }

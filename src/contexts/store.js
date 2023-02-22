@@ -16,7 +16,8 @@ export const actionType={
     logout_user:"LOGOUT-USER",
     login_error:"LOGIN-ERROR",
     update_userInfo:"UPDATE-USERINFO",
-    get_user_info:"GET-USER-INFO"
+    get_user_info:"GET-USER-INFO",
+    register_success:"REGISTER-SUCCESS",
 }
 const reducer=(state,action)=>{
 switch (action.type) {
@@ -63,6 +64,16 @@ case actionType.login_error:
                 loading:false,
                 studentModel:null,
                 token:null
+               }
+        }
+    case actionType.register_success:
+        return{
+            ...state,
+               userInfo:{
+                ...state.userInfo,
+                ...state.userInfo,
+                loading:false,
+                token:action.payload.jwtToken
                }
         }
     default:

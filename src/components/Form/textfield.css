@@ -42,6 +42,7 @@
   flex-direction: column;
   gap: 1em;
   color: var(--mainBlueColor);
+  direction: rtl;
 }
 .btnHolder{
   width: "100%"

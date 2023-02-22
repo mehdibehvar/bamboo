@@ -32,9 +32,9 @@ const Register = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <Container maxWidth="xl" style={{ height: '100vh', margin:'0', padding: '0' }}>
+    <Container maxWidth="xxl" style={{ height: '100vh', margin:'0', padding: '0' }}>
         <Grid container direction='row-reverse' justifyContent="space-between">
-          <Poster/>
+          {/* <Poster/> */}
           <Register item xs={12} md={6} lg={5} className='register' >
                 <Grid container justifyContent="space-between" alignItems='center' className='formHeading'>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>
