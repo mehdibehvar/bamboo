@@ -43,6 +43,23 @@
   gap: 1em;
   color: var(--mainBlueColor);
   direction: rtl;
+ 
+  .textfieldRtl{
+    text-align: right;
+    background-color: aliceblue;
+    border-radius: 0;
+
+ legend {
+        text-align:right
+      }
+
+ label {
+  transform-origin: top right;
+  right: 26px;
+
+}
+};
+
 }
 .btnHolder{
   width: "100%"
@@ -60,17 +77,8 @@
   background: transparent;
   border: none;
 }
-.textfieldRtl{
-    text-align: right;
-    background-color: aliceblue;
-    border-radius: 0;
-    
-}
-.textfieldRtl label {
-    transform-origin: top right;
-    right: 26px;
-    
-}
+
+
 .boldFont{
   font-family: 'Shabnam';
   font-weight: bold;

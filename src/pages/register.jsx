@@ -1,8 +1,8 @@
 import React from 'react'
 import { Typography, Button, Grid, Container, ThemeProvider } from '@mui/material'
 import { createTheme } from '@mui/material/styles';
-import '../components/Form/textfield.css';
-import Poster from '../components/poster/Poster'
+import '../components/Form/textfield.scss';
+import PosterSection from '../components/poster/Poster'
 import { styled } from '@mui/system';
 import blueHomeIcon from '../assets/home.svg';
 import Form from '../components/Form/Form';
@@ -32,9 +32,9 @@ const Register = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <Container maxWidth="xxl" style={{ height: '100vh', margin:'0', padding: '0' }}>
+    <Container maxWidth="xxl" style={{  margin:'0', padding: '0' }}>
         <Grid container direction='row-reverse' justifyContent="space-between">
-          <Poster/>
+          <PosterSection/>
           <Register item xs={12} md={6} lg={5} className='register' >
                 <Grid container justifyContent="space-between" alignItems='center' className='formHeading'>
                     <Typography variant='h2' className='boldFont' style={{fontSize: '2.5rem'}}>ثبت نام</Typography>

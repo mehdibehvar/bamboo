@@ -19,6 +19,7 @@ export const actionType={
     get_user_info:"GET-USER-INFO",
     register_success:"REGISTER-SUCCESS",
 }
+
 const reducer=(state,action)=>{
 switch (action.type) {
     case actionType.login_request:

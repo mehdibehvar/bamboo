@@ -8,7 +8,7 @@ import {
   FormHelperText,
 } from "@mui/material";
 import Loading from "../loading/Loading";
-import "./textfield.css";
+import "./textfield.scss";
 import * as yup from "yup";
 import { styled } from "@mui/system";
 import { actionType, store } from "../../contexts/store";
@@ -17,6 +17,7 @@ import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useSnackbar } from "notistack";
+import { NavLink } from "react-router-dom";
 
 const RegisterBtn = styled(Button)(({ theme }) => ({
   height: "50px",
@@ -113,7 +114,7 @@ const Form = () => {
         payload: "حطایی رخ داده",
       });
       enqueueSnackbar("حطایی رخ داده", {
-        variant: "warning",
+        variant: "error",
         autoHideDuration: 2000,
       });
     }
@@ -130,18 +131,18 @@ const Form = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           {error?<h4>خطایی رخ داده است</h4>:null}
-          <FormControl fullWidth sx={{ mb: 1,direction:"rtl" }}>
+          <FormControl className="textfieldRtl"  fullWidth sx={{ mb: 1,direction:"rtl" }}>
             <InputLabel sx={{ direction:"rtl" }} htmlFor="fullName" error={Boolean(errors.fullName)}>
               نام کامل
             </InputLabel>
-            <OutlinedInput label="fullName " {...register("fullName")} />
+            <OutlinedInput   label="fullName " {...register("fullName")} />
             {errors.fullName && (
               <FormHelperText sx={{ color: "error.main" }}>
                 {errors.fullName.message}
               </FormHelperText>
             )}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel htmlFor="lesson2" error={Boolean(errors.email)}>
               ایمیل
             </InputLabel>
@@ -152,7 +153,7 @@ const Form = () => {
               </FormHelperText>
             )}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel htmlFor="password" error={Boolean(errors.password)}>
               رمز عبور
             </InputLabel>
@@ -163,7 +164,7 @@ const Form = () => {
               </FormHelperText>
             )}
           </FormControl>        
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel
               htmlFor="phoneNumber"
               error={Boolean(errors.phoneNumber)}
@@ -171,18 +172,14 @@ const Form = () => {
               شماره تلفن
             </InputLabel>
             <OutlinedInput label="phoneNumber " {...register("phoneNumber")} />
-          </FormControl>
-    
-      
-
-       
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          </FormControl>      
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel htmlFor="phoneNumber" error={Boolean(errors.birthDate)}>
               تاریخ تولد
             </InputLabel>
             <OutlinedInput label="birthDate " {...register("birthDate")} />
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel htmlFor="nationalId" error={Boolean(errors.nationalId)}>
               کدملی
             </InputLabel>
@@ -193,7 +190,7 @@ const Form = () => {
               </FormHelperText>
             )}
           </FormControl>
-          <FormControl fullWidth sx={{ mb: 1 }}>
+          <FormControl className="textfieldRtl" fullWidth sx={{ mb: 1 }}>
             <InputLabel htmlFor="image-input">عکس پروفایل</InputLabel>
             <OutlinedInput id="image-input" name="profile" type="file" {...register("profile")} />
           </FormControl>
@@ -208,9 +205,12 @@ const Form = () => {
             <RegisterBtn type="submit" variant="contained" size="large">
               ثبت نام
             </RegisterBtn>
-            <LoginBtn variant="contained" size="large">
+            <NavLink to="/login">
+                <LoginBtn variant="contained" size="large">
               ورود
             </LoginBtn>
+            </NavLink>
+          
           </Grid>
         </form>
       )}

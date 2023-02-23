@@ -8,6 +8,7 @@ import { FiLogOut } from "react-icons/fi";
 import jwt_decode from "jwt-decode";
 import { getStudentById } from "../../utils/httpclient";
 import { getItem, removeItem } from "../../utils/storage.service";
+import styled from "@emotion/styled";
 const Navbar = () => {
   const { state, dispatch } = useContext(store);
   const { studentModel } = state.userInfo;
@@ -40,6 +41,16 @@ const Navbar = () => {
 removeItem("token");
 
   };
+  const Avatar=styled("span")(({theme})=>(props)=>(
+    { 
+        width:50,
+        height:50,
+        backgroundImage:`url(${props.url})`,
+        backgroundSize:"cover",
+        borderRadius:25
+     
+      }
+  ));
   return (
     <nav className="navbar">
       <div className="navbar_Links_section">
@@ -87,6 +98,7 @@ removeItem("token");
                   </span>
                 </div>
               ) : null}
+             <Avatar url={studentModel.profile}/>
             </div>
           ) : (
             <>
