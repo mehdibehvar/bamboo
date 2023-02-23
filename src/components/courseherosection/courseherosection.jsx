@@ -47,11 +47,11 @@ const barPercent=(course?.students?.length/course.capacity)*100
     <div className="capacity_wrapper">
         <div className="capacity">
             <TeamWorkIcon/>
-            <span>ظرفیت {course.capacity} نفر</span>
+            <span>ظرفیت {course.capacity.toLocaleString("fa-IR")} نفر</span>
         </div>
         <div className="students">
         <GraduateIcon/>
-            <span>دانشجو {course?.students?.length} نفر</span>
+            <span>دانشجو {course?.students?.length.toLocaleString("fa-IR")} نفر</span>
         </div>
     </div>
     <div className="capacity_bar">
@@ -74,7 +74,7 @@ const barPercent=(course?.students?.length/course.capacity)*100
         <div className="border border_right"></div>
       <div className="date_wrapper">
       <CalenderIcon/>
-        <span> تاریخ شروع : {new Date(course.startDate).toLocaleDateString()}</span>
+        <span> تاریخ شروع : {(new Date(course.startDate).toLocaleDateString())}</span>
         <span> تاریخ پایان  : {new Date(course.endDate).toLocaleDateString()}</span>
       </div>
         <div className="border border_left"></div>

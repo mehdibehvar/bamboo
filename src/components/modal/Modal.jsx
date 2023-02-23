@@ -41,7 +41,7 @@ export default function CourseModal({ course, open, handleClose }) {
                 <div className="capacity">
                   <div>
                     <span>ظرفیت:</span>
-                    <span>{course.capacity} نفر</span>
+                    <span>{course.capacity.toLocaleString("fa-IR")} نفر</span>
                   </div>
                 </div>
                 <div className="date">
@@ -60,7 +60,7 @@ export default function CourseModal({ course, open, handleClose }) {
                 </div>
                 <div className="price">
                   <span>قیمت:</span>
-                  <span>{course.cost} تومان</span>
+                  <span>{course.cost.toLocaleString("fa-IR")} تومان</span>
                 </div>
               </div>
               <CardLogo url={`${course.lesson.image}`} />

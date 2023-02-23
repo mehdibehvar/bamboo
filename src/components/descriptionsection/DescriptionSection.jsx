@@ -73,7 +73,7 @@ if(isuserRegistered){
             <div className="price">
               <span>قیمت دوره : </span>
               <span>
-                {course.cost} <span>تومان</span>
+                {course.cost.toLocaleString("fa-IR")} <span>تومان</span>
               </span>
             </div>
             <div className="discount">
@@ -83,7 +83,7 @@ if(isuserRegistered){
             <div className="pay_price">
               <span>مبلغ قابل پرداخت :</span>
               <span>
-                {course.cost - (course.cost * 10) / 100} <span>تومان</span>
+                {(course.cost - (course.cost * 10) / 100).toLocaleString("fa-IR")} <span>تومان</span>
               </span>
             </div>
           </div>

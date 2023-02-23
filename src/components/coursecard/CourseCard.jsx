@@ -33,7 +33,7 @@ const CourseCard = ({course}) => {
             <div className='capacity'>
                 <div>
                     <span>ظرفیت:</span>
-                    <span>{course.capacity} نفر</span>
+                    <span>{course.capacity.toLocaleString("fa-IR")} نفر</span>
                 </div>
               
                 <button onClick={handleOpen}>جزییات</button>
@@ -42,7 +42,7 @@ const CourseCard = ({course}) => {
             <div className='border_bottom'></div>
         </div>
         <div className='price'>
-            <span>{course.cost} تومان</span>
+            <span>{course.cost.toLocaleString("fa-IR")} تومان</span>
         </div>
     </div>
   )
