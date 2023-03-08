@@ -8,7 +8,7 @@ const initialState={
         studentModel:null,
         token:getItem("token")?JSON.parse(getItem("token")):null,
         error:null
-    }
+    } 
 };
 export const actionType={
     login_request:"LOGIN-REQUEST",
