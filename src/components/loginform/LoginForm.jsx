@@ -8,7 +8,7 @@ import { loginUser } from "../../utils/httpclient";
 import { setItem } from "../../utils/storage.service";
 import Loading from "../loading/Loading";
 
-const LoginForm = () => {
+const LoginForm = () => { 
   const {state,dispatch}=useContext(store);
   const {loading,error} =state.userInfo;
   const navigate = useNavigate();

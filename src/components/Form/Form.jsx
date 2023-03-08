@@ -104,7 +104,7 @@ const Form = () => {
       if(response.success){
         enqueueSnackbar(response.message[0].message, {
           variant: "success",
-          autoHideDuration: 2000,
+          autoHideDuration: 2000, 
         });
       }
       navigate("/login");
